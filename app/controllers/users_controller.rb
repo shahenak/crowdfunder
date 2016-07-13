@@ -7,8 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = 'Welcome!'
-      redirect_to projects_path
+      redirect_to root_path, alert: 'Signed up'
     else
       render :new
     end
