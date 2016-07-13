@@ -26,6 +26,6 @@ before_action :require_login, only: :show
   private
 
   def project_params
-    params.require(:project).permit(:name, :goal, :deadline)
+    params.require(:project).permit(:name, :goal, :deadline, :category)
   end
 end
