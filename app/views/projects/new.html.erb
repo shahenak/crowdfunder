@@ -3,6 +3,11 @@
 <%= form_for @project do |f| %>
 <!-- Project fields-->
   <div class="field">
+    <%= f.label "Image"%><br>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
