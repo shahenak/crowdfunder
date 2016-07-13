@@ -17,8 +17,11 @@ ActiveRecord::Schema.define(version: 20160712230414) do
     t.string   "name"
     t.integer  "goal"
     t.datetime "deadline"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "description"
+    t.string   "category"
+    t.string   "location"
   end
 
   create_table "rewards", force: :cascade do |t|
