@@ -1,0 +1,13 @@
+<h1>Project</h1>
+
+Name :<%= @project.name%><br />
+Description: <%= @project.description %><br />
+Goal: $<%= @project.goal %><br />
+Category: <%= @project.category%><br />
+Location: <%= @project.location %><br />
+Deadline: <%= @project.deadline %><br />
+
+
+<%= @project.rewards.each do |reward| %>
+<%= reward.amount %>
+<% end %>
