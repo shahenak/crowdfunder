@@ -31,6 +31,9 @@ gem 'validates_email_format_of'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+#FOR ADD IMAGEs
+gem 'carrierwave'
+gem 'mini_magick', '~> 4.3'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
