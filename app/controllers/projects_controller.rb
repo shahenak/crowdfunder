@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-# before_action :require_login, only: :show
+before_action :require_login, except: [:index, :show]
 
   def index
     @projects = Project.all
@@ -27,6 +27,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:name, :goal, :deadline, :category)
+    params.require(:project).permit(:name, :description, :category, :location, :goal, :deadline, :name, :description, :amount)
   end
+
 end
