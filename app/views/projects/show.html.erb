@@ -8,7 +8,11 @@ Location: <%= @project.location %><br />
 Deadline: <%= @project.deadline %><br />
 Image: <%= image_tag @project.image_url.to_s %> <br />
 
-<%= @project.rewards.each do |reward| %>
+<p>
+  There are <%= distance_of_time_in_words(@project.deadline, DateTime.now.utc) %> days left in this project. Still needs Y funding
+</p>
+
+<% @project.rewards.each do |reward| %>
   Name: <%= reward.name %>
   description: <%= reward.description %>
   Amount: <%= reward.amount %>
