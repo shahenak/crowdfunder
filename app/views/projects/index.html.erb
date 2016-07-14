@@ -5,23 +5,29 @@
 
   <h1 class="all_projects">All projects</h1>
 
-  <div class="category_sort">
+
     <p>
       See projects by Category
     </p>
 
-    <p id="art">
+    <p id="art" class="category" data-category="Art">
       Art
     </p>
+    <div id="Artdiv">
 
-    <p id="tech">
+    </div>
+
+    <p id="tech" class="category" data-category="Tech">
       Tech
     </p>
 
-    <p id="nature">
+    <p id="nature" class="category" data-category="Nature">
       Nature
-    </p>
-  </div>
+    </p><br>
+    <div id="Naturediv" class="Catdiv">
+
+    </div>
+
 
   <ul>
     <% @projects.each do |project| %>
