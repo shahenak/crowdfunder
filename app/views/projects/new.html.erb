@@ -3,12 +3,11 @@
 <%= form_for @project do |f| %>
 <!-- Project fields-->
   <div class="field">
-    <%= f.label "Image"%><br>
+    <%= f.label :image %><br>
     <%= f.file_field :image %>
   </div>
 
   <div class="field">
-    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
 
@@ -20,7 +19,7 @@
 
   <div class="field">
     <%= f.label :category %>
-    <%= select_tag "category", options_for_select([['Art' ,'Art'], ['Tech', 'Tech']]) %>
+    <%= select_tag "category", options_for_select([['Art' ,'Art'], ['Tech', 'Tech'], ['Nature']]) %>
 
   </div>
 

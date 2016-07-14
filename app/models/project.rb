@@ -3,14 +3,16 @@ class Project < ActiveRecord::Base
 
   accepts_nested_attributes_for :rewards
 
+  # to upload image with the gem carrierwave
+  mount_uploader :image, ImageUploader
 
-    # Control on date for past date
-    validate :not_past_date
+  # Control on date for past date
+  validate :not_past_date
 
-    def not_past_date
-      if self.deadline < Date.today
-        errors.add(:deadline , 'not in past')
-      end
+  def not_past_date
+    if self.deadline < Date.today
+      errors.add(:deadline , 'not in past')
     end
+  end
 
 end
