@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  #before_action :require_login
+  before_action :require_login, only: [:edit, :update]
 
   def new
     @user = User.new
@@ -30,7 +30,9 @@ class UsersController < ApplicationController
   end
 
   def edit
+
     @user = User.find(params[:id])
+
   end
 
   private
