@@ -14,15 +14,15 @@ $(function(){
 
   $('.category').on('click', function(e){
     $('.Catdiv').html('');
-    $.ajax({
-      url: "/projects/cat_search",
-      method: 'GET',
-      data: { "category": $(this).data("category") },
-      dataType: 'html'
-    }).done(function(responseData){
-      console.log(responseData);
-      $('.Catdiv').append(responseData);
-    });
+      $.ajax({
+        url: "/projects/cat_search",
+        method: 'GET',
+        data: { "category": $(this).data("category") },
+        dataType: 'html'
+      }).done(function(responseData){
+        console.log(responseData);
+        $('.Catdiv').append(responseData);
+      });
   });
   //
   // $('#nature').on('click', function(e){
