@@ -1,4 +1,16 @@
 Rails.application.configure do
+
+
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address:              'smtp.gmail.com',
+  port:                 587,
+  domain:               'example.com',
+  user_name:             Figaro.env.gmail_username,
+  password:              Figaro.env.gmail_password,
+  authentication:       'plain',
+  enable_starttls_auto: true  }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
