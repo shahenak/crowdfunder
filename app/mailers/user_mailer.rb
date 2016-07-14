@@ -5,13 +5,19 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.reset_password_email.subject
   #
-  def reset_password_email
-    @greeting = "Hi"
 
-    mail to: "to@example.org"
+  def welcome(user)
+    @user = user
+    mail(to: @user.email, subject: "Welcome to Crowdfunder!")
   end
 
-  def reset_password_email(user)
-  end
-  
+  # def reset_password_email
+  #   @greeting = "Hi"
+  #
+  #   mail to: "to@example.org"
+  # end
+  #
+  # def reset_password_email(user)
+  # end
+
 end
