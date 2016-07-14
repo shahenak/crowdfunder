@@ -1,7 +1,7 @@
 $(function(){
   $('.clicky').on('click', function(e){
     e.preventDefault();
-
+    $('.ajax_project').html('');
     $.ajax({
       url: $(this).attr('href'),
       method: 'GET',
