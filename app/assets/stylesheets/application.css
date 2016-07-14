@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+ * {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Avenir next", Helvetica, sans-serif;
+  font-weight: normal;;
+}
+
+.mainnav {
+  background-color: #416A98;
+}
+
+.logo_home {
+  margin-left: 35%;
+  margin-top: 25px;
+}
