@@ -2,9 +2,16 @@
 
 <h1 class="all_projects">All projects</h1>
 
+<p>
+  See projects by Category
+</p>
 
 <ul>
   <% @projects.each do |project| %>
-    <%= link_to project.name, project_path(project) %>
+    <%= link_to project.name, project_path(project), class: "clicky" %>
   <% end %>
 </ul>
+
+<div class="ajax_project">
+
+</div>
