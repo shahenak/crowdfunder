@@ -1,10 +1,36 @@
-<h1>All projects</h1>
+<h1 class="popular_three">What's popular!</h1>
 
-<%= link_to 'New Project', new_project_path %>
+<div class="projects">
 
 
-<ul>
-  <% @projects.each do |project| %>
-    <%= link_to project.name, project_path(project) %>
-  <% end %>
-</ul>
+  <h1 class="all_projects">All projects</h1>
+
+  <div class="category_sort">
+    <p>
+      See projects by Category
+    </p>
+
+    <p id="art">
+      Art
+    </p>
+
+    <p id="tech">
+      Tech
+    </p>
+
+    <p id="nature">
+      Nature
+    </p>
+  </div>
+
+  <ul>
+    <% @projects.each do |project| %>
+      <%= link_to project.name, project_path(project), class: "clicky" %>
+    <% end %>
+  </ul>
+</div>
+
+
+<div class="ajax_project">
+
+</div>

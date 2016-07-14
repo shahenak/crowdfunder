@@ -8,23 +8,28 @@
 </head>
 <body>
 
-  <div class="homelogo">
-    <%= image_tag 'booster_logo.png', width: 405, height: 130, alt: 'logo'%>
-  </div>
+  <nav class="mainnav">
 
-  <% if current_user %>
-     <%= link_to "Logout", session_path("current"), method: :delete %> |
-   <% else %>
-     <%= link_to "Sign up", new_user_path %> |
-     <%= link_to "Login", new_session_path %> |
-   <% end %>
-   <%= link_to "Home", root_path %>
+      <%= image_tag 'booster_logo_white.png', width: 405, height: 120, alt: 'logo', class: "logo_home"%>
 
-   <% if flash[:alert] %>
-     <p><%= flash[:alert] %></p>
-   <% end %>
+    <div class="navlinks">
+      <% if current_user %>
+         <%= link_to "LOG OUT", session_path("current"), method: :delete %> |
+       <% else %>
+         <%= link_to "SIGN UP", new_user_path %> |
+         <%= link_to "LOGIN", new_session_path %> |
+       <% end %>
+       <%= link_to "Home", root_path %>
+    </div>
+    <%= link_to 'New Project', new_project_path %>
+  </nav>
 
-<%= yield %>
+     <% if flash[:alert] %>
+       <p><%= flash[:alert] %></p>
+     <% end %>
+
+
+  <%= yield %>
 
 </body>
 </html>
