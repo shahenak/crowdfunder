@@ -8,11 +8,11 @@ class User < ActiveRecord::Base
   has_many :projects, foreign_key: 'owner_id'
   has_many :rewards, through: :donations
 
-  # validates :password, length: { minimum: 3 }
-  # validates :password, length: { maximum: 20}
-  # validates :password, confirmation: true
+  validates :password, length: { minimum: 3 }
+  validates :password, length: { maximum: 20}
+  validates :password, confirmation: true
 
-  # validates :email, uniqueness: true, email_format: { message: 'has invalid format' }
+  validates :email, uniqueness: true, email_format: { message: 'has invalid format' }
 # added wolf
   # def reset_password_email(user)
   #    @user = User.find user.id

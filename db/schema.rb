@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160714211809) do
     t.integer  "backer_id"
     t.integer  "project_id"
 
+end
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"

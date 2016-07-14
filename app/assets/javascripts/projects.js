@@ -12,7 +12,7 @@ $(function(){
     });
   });
 
-  $('#art').on('click', function(e){
+  $('.category').on('click', function(e){
     $.ajax({
       url: "/projects/cat_search",
       method: 'GET',
