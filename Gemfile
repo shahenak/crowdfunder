@@ -31,9 +31,15 @@ gem 'validates_email_format_of'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+<<<<<<< HEAD
 #FOR ADD IMAGEs
 gem 'carrierwave'
 gem 'mini_magick', '~> 4.3'
+=======
+#FOR IMAGES UPLOAD
+gem 'carrierwave'
+gem 'mini_magick'
+>>>>>>> project_reward
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -48,7 +54,7 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
+  gem 'pry-rails'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
