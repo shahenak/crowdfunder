@@ -31,6 +31,21 @@ before_action :require_login, except: [:index, :show]
     end
   end
 
+  def cat_search
+    #query for all project categories
+    #return the projects in an object
+
+
+    @projects = Project.where("category = ?", params[:category])
+     render :cat_search, layout: false
+    # respond_to do |format|
+    #   if request.xhr?
+    #    format.html { render :layout => false }
+    #   end
+    # end
+  end
+
+
   private
 
   def project_params

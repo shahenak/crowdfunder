@@ -11,4 +11,15 @@ $(function(){
       $('.ajax_project').append(responseData);
     });
   });
+
+  $('#art').on('click', function(e){
+    $.ajax({
+      url: "/projects/cat_search",
+      method: 'GET',
+      data: { "category": "Art" },
+      dataType: 'html'
+    }).done(function(responseData){
+      console.log(responseData)
+    });
+  });
 });
