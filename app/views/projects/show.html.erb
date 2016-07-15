@@ -20,9 +20,7 @@ Donations Sum: <%= @project.sum %>
 <%= render 'form' %>
 
 
-<p>
-  There are <%= distance_of_time_in_words(@project.deadline, DateTime.now.utc) %> days left in this project. Still needs Y funding
-</p>
+
 
 
 <% @project.rewards.each do |reward| %>
@@ -31,3 +29,9 @@ Donations Sum: <%= @project.sum %>
   Amount: <%= reward.amount %>
 
 <% end %>
+
+<br>
+<br>
+<p>
+  There are <%= distance_of_time_in_words(@project.deadline, DateTime.now.utc) %> days left in this project. Still needs Y funding
+</p>
