@@ -5,23 +5,40 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+
 </head>
 <body>
 
   <nav class="mainnav">
 
-      <%= image_tag 'booster_logo_white.png', width: 405, height: 120, alt: 'logo', class: "logo_home"%>
-
     <div class="navlinks">
+
       <% if current_user %>
-         <%= link_to "LOG OUT", session_path("current"), method: :delete %> |
+
+      <div class="logout">
+         <%= link_to "LOG OUT", session_path("current"), method: :delete %>
+      </div>
+
        <% else %>
-         <%= link_to "SIGN UP", new_user_path %> |
-         <%= link_to "LOGIN", new_session_path %> |
+
+      <div class="signuplogin">
+         <%= link_to "SIGN UP", new_user_path %> /
+         <%= link_to "LOGIN", new_session_path%>
+      </div>
+
        <% end %>
-       <%= link_to "Home", root_path %>
+
+      <div class="startproject">
+        <%= link_to 'START A PROJECT', new_project_path%>
+      </div>
+
+      <div>
+      <%= link_to(image_tag("booster_logo_white.png", :alt => "home image", :width => 320, :height => 130, class: "logo_home", :title => "Click here to return to Home"), root_path) %>
+      </div>
+
     </div>
-    <%= link_to 'New Project', new_project_path %>
+
   </nav>
 
      <% if flash[:alert] %>

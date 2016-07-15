@@ -1,11 +1,17 @@
-<h1>login</h1>
+<div class="loginform">
 
-<%= form_tag sessions_path do %>
-  <%= label_tag :email %>
-  <%= text_field_tag :email %><br>
+  <h1 class="logintitle">LOGIN</h1>
 
-  <%= label_tag :password %>
-  <%= password_field_tag :password %><br>
+  <%= form_tag sessions_path do %>
+    <div class="emailtag">
+    <%= label_tag :email %><br>
+    </div>
+    <%= text_field_tag :email %><br>
 
-  <%= submit_tag "Log in" %>
-<% end %>
+    <%= label_tag :password %><br>
+    <%= password_field_tag :password %><br>
+
+    <%= submit_tag "Log in", class:"btn" %>
+  <% end %>
+
+</div>

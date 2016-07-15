@@ -1,17 +1,19 @@
-<h1 class="popular_three">What's popular!</h1>
+<!-- <h1 class="popular_three">What's popular!</h1> -->
 
-<h1 class="all_projects">All projects</h1>
+<div class="projects">
+  <h1 class="all_projects">All projects</h1>
 
-<p>
-  See projects by Category
-</p>
+  <p>
+    See projects by Category
+  </p>
 
-<ul>
-  <% @projects.each do |project| %>
-    <%= link_to project.name, project_path(project), class: "clicky" %>
-  <% end %>
-</ul>
-
-<div class="ajax_project">
-
+  <ul>
+    <% @projects.each do |project| %>
+      <%= link_to project.name, project_path(project), class: "clicky" %>
+    <% end %>
+  </ul>
 </div>
+
+  <div class="ajax_project">
+
+  </div>
