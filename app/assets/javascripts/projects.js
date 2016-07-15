@@ -20,8 +20,10 @@ $(function(){
         data: { "category": $(this).data("category") },
         dataType: 'html'
       }).done(function(responseData){
-        console.log('hey',responseData);
+        console.log(responseData);
         $('.Catdiv').append(responseData);
+      }).fail(function(){
+        console.log('something happened')
       });
   });
   //
