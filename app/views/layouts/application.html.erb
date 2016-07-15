@@ -4,6 +4,8 @@
   <title>Crowdfunder</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js' %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -30,6 +32,7 @@
 
 
   <%= yield %>
+ 
 
 </body>
 </html>

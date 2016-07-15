@@ -11,4 +11,32 @@ $(function(){
       $('.ajax_project').append(responseData);
     });
   });
+
+  $('.category').on('click', function(){
+    $('.Catdiv').html('');
+      $.ajax({
+        url: "/projects/cat_search",
+        method: 'GET',
+        data: { "category": $(this).data("category") },
+        dataType: 'html'
+      }).done(function(responseData){
+        console.log('hey',responseData);
+        $('.Catdiv').append(responseData);
+      });
+  });
+  //
+  // $('#nature').on('click', function(e){
+  //   $('#Naturediv').html('');
+  //   $.ajax({
+  //     url: "/projects/cat_search",
+  //     method: 'GET',
+  //     data: { "category": "Nature" },
+  //     dataType: 'html'
+  //   }).done(function(responseData){
+  //     console.log(responseData);
+  //     $('#Naturediv').append(responseData);
+  //   });
+  // });
+
+
 });
