@@ -42,7 +42,7 @@
 
     <!--  Rewards fields-->
 
-    <div class="field">
+  
       <h2>New Reward</h2>
       <%= f.fields_for :rewards do |rewards_fields| %>
       <div class="field">
@@ -60,7 +60,7 @@
         <%= rewards_fields.number_field :amount %>
       </div>
       <% end %>
-    </div>
+
 
     <%= f.submit %>
   <% end %>
