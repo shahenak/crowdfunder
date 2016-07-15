@@ -20,7 +20,7 @@ before_action :require_login, except: [:index, :show]
 
   def new
     @project = Project.new
-    # @reward = @project.rewards.build
+    @reward = @project.rewards.build
   end
 
   def create
