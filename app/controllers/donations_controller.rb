@@ -8,16 +8,26 @@ class DonationsController < ApplicationController
     puts donation_params
     @donation = Donation.new(donation_params)
 
-
     if @donation.save
       @project = Project.find(params[:project_id])
       @project.sum += @donation.amount
       @project.update_attributes(sum: @project.sum)
-
-      redirect_to project_path(params[:project_id])
-    else
-      render :new
+      render json: @project
+      # respond_to do |format|
+      #   if request.xhr?
+      #     format.json { render @project}
+      #   end
+      # end
     end
+        #
+        # else
+        #
+        #   redirect_to project_path(params[:project_id])
+      #   else
+      #     render :new
+      #   end
+      # end
+
   end
 
 

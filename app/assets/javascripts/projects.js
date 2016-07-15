@@ -12,6 +12,7 @@ $(function(){
     });
   });
 
+
   $('.category').on('click', function(){
     $('.Catdiv').html('');
       $.ajax({
@@ -26,6 +27,26 @@ $(function(){
         console.log('something happened')
       });
   });
+
+  $('#new_donation').submit(function(e){
+      e.preventDefault();
+    $.ajax({
+        url: $(this).attr('action'),
+        method:$(this).attr('method'),
+        data: $(this).serialize(),
+        dataType:"json"
+    }).done(function(responseData){
+        $('#donation_amount').val('');
+        $('.resp').text("Thank you!");
+        $('.project-sum').text(responseData.sum)
+    }).fail(function(){
+        console.log('Fail');
+    }).always(function(){
+        console.log("Always");
+    })
+  })
+
+
   //
   // $('#nature').on('click', function(e){
   //   $('#Naturediv').html('');

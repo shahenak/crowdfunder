@@ -1,38 +1,40 @@
-<div class="viewprojects">
-
-  <h1><%= @project.name %></h1>
-    Description: <%= @project.description %><br />
-    <p class="<%= 'goal_reached' if @project.sum > @project.goal %>">
-      Goal: $<%= @project.goal %>
-    </p>
+<h1><%= @project.name %></h1>
 
 
-    <br />
-    Category: <%= @project.category %><br />
-    Location: <%= @project.location %><br />
-    Deadline: <%= @project.deadline.strftime("%m/%d/%Y") %> <br />
-    Image: <%= image_tag @project.image.thumb.url %> <br />
-    Donations Sum: <%= @project.sum %>
-
-
-
-
-
-    <%= render 'form' %>
-
-
-
-    <h2>Rewards</h2>
-    <% @project.rewards.each do |reward| %>
-      Name: <%= reward.name %> <br />
-      description: <%= reward.description %><br />
-      Amount: <%= reward.amount %><br />
-
-    <% end %>
-
-    <br>
-    <br>
-    <p>
-      There are <%= distance_of_time_in_words(@project.deadline, DateTime.now.utc) %> days left in this project. Still needs $<%= @project.goal - @project.sum %> funding
-    </p>
+<div class="resp">
 </div>
+
+Description: <%= @project.description %><br />
+<p class="<%= 'goal_reached' if @project.sum > @project.goal %>">
+  Goal: $<%= @project.goal %>
+</p>
+
+
+<br />
+Category: <%= @project.category %><br />
+Location: <%= @project.location %><br />
+Deadline: <%= @project.deadline.strftime("%m/%d/%Y") %> <br />
+Image: <%= image_tag @project.image.thumb.url %> <br />
+Donations Sum: <span class="project-sum"><%= @project.sum %></span>
+
+
+
+
+
+<%= render 'form' %>
+
+
+
+<h2>Rewards</h2>
+<% @project.rewards.each do |reward| %>
+  Name: <%= reward.name %> <br />
+  description: <%= reward.description %><br />
+  Amount: <%= reward.amount %><br />
+
+<% end %>
+
+<br>
+<br>
+<p>
+  There are <%= distance_of_time_in_words(@project.deadline, DateTime.now.utc) %> days left in this project. Still needs $<%= @project.goal - @project.sum %> funding
+</p>
