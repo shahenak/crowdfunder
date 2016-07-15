@@ -24,14 +24,19 @@
     <p id="nature" class="category" data-category="Nature">
       Nature
     </p><br>
-    <div id="Naturediv" class="Catdiv">
-
-    </div>
-
 
   <ul>
     <% @projects.each do |project| %>
       <%= link_to project.name, project_path(project) %>
     <% end %>
   </ul>
+
+<br>
+<br>
+<p>
+  Here are projects sorted by selected categories (if you clicked!)
+</p>
+  <div id="Naturediv" class="Catdiv">
+
+  </div>
 </div>
