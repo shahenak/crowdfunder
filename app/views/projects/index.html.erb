@@ -5,9 +5,9 @@
   <h1 class="all_projects">All projects</h1>
 
 
-    <p>
+    <p><u>
       See projects by Category
-    </p>
+    </p></u>
 
     <p id="art" class="category" data-category="Art">
       Art
@@ -23,14 +23,19 @@
     <p id="nature" class="category" data-category="Nature">
       Nature
     </p><br>
-    <div id="Naturediv" class="Catdiv">
-
-    </div>
-
 
   <ul>
     <% @projects.each do |project| %>
       <%= link_to project.name, project_path(project) %>
     <% end %>
   </ul>
+
+<br>
+<br>
+<p>
+  Here are projects sorted by selected categories (if you clicked!)
+</p>
+  <div id="Naturediv" class="Catdiv">
+
+  </div>
 </div>
