@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :projects do
     resources :rewards
+    resources :donations
   end
 
-  resources :donation
 
   #post 'logout' => 'sessions#destroy', :as => :logout
   # The priority is based upon order of creation: first created -> highest priority.

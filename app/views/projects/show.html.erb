@@ -6,24 +6,13 @@ Category: <%= @project.category %><br />
 Location: <%= @project.location %><br />
 Deadline: <%= @project.deadline %><br />
 Image: <%= image_tag @project.image_url.to_s %> <br />
-Total Donations: <%= @project.remaining_goal %> <br />
 
 
+<%= render 'form' %>
 
 
-<h3>Make a Donation to this Project:</h3>
-<%= form_for @donation do |f| %>
-  <div class="form_field">
-    <%= f.label :amount %>
-    <%= f.number_field :amount, min: 1%>
-  </div>
-  <div class="submit">
-    <%= f.submit %>
-  </div>
-  <% end %>
-  
 <p>
-  There are <%= distance_of_time_in_words(@project.deadline, DateTime.now.utc) %> days left in this project. Still needs Y funding
+  There are <%= @project.deadline %> days left in this project. Still needs Y funding
 </p>
 
 <% @project.rewards.each do |reward| %>

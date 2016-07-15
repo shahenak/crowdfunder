@@ -13,15 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20160714211809) do
 
-
   create_table "donations", force: :cascade do |t|
     t.float    "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "backer_id"
     t.integer  "project_id"
-
-end
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"
@@ -31,12 +29,9 @@ end
     t.datetime "updated_at",  null: false
     t.string   "category"
     t.string   "image"
-
     t.integer  "owner_id"
-
     t.string   "description"
     t.string   "location"
-
   end
 
   create_table "rewards", force: :cascade do |t|

@@ -8,7 +8,7 @@ class DonationsController < ApplicationController
     @donation = Donation.new(donation_params)
 
     if @donation.save
-      redirect_to project_path(@project)
+      redirect_to project_path(params[:project_id])
     else
       render :new
     end
@@ -19,10 +19,10 @@ class DonationsController < ApplicationController
   end
 
 
-
   private
 
   def donation_params
     params.require(:donation).permit(:amount);
   end
+
 end

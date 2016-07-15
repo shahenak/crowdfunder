@@ -9,11 +9,12 @@ before_action :require_login, except: [:index, :show]
 
   def show
     @project = Project.find(params[:id])
-    respond_to do |format|
-      if request.xhr?
-       format.html { render :layout => false }
-      end
-    end
+    @donation = Donation.new
+    # respond_to do |format|
+    #   if request.xhr?
+    #    format.html { render :layout => false }
+    #   end
+    # end
   end
 
   def new

@@ -31,12 +31,7 @@
 
   <ul>
     <% @projects.each do |project| %>
-      <%= link_to project.name, project_path(project.id), class: "clicky" %>
+      <%= link_to project.name, project_path(project) %>
     <% end %>
   </ul>
-</div>
-
-
-<div class="ajax_project">
-
 </div>
