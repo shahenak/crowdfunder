@@ -38,5 +38,12 @@ $(function(){
   //   });
   // });
 
+  // function goal_reached(sum){
+  //   if (sum === goal_reached) {
+  //     console.log("Goal reached");
+  //   } else {
+  //     console.log("Obbietivo non ancora raggiuto");
+  //   }
+  // }
 
 });

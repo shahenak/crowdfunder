@@ -6,4 +6,5 @@ belongs_to :backer, class_name: 'User', foreign_key: 'backer_id'
 has_one :reward
 
 
+
 end
