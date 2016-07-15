@@ -12,7 +12,7 @@ $(function(){
     });
   });
 
-  $('.category').on('click', function(e){
+  $('.category').on('click', function(){
     $('.Catdiv').html('');
       $.ajax({
         url: "/projects/cat_search",
@@ -20,7 +20,7 @@ $(function(){
         data: { "category": $(this).data("category") },
         dataType: 'html'
       }).done(function(responseData){
-        console.log(responseData);
+        console.log('hey',responseData);
         $('.Catdiv').append(responseData);
       });
   });
