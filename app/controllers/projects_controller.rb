@@ -10,6 +10,7 @@ before_action :require_login, except: [:index, :show]
   def show
     @project = Project.find(params[:id])
     @donation = Donation.new
+
     # respond_to do |format|
     #   if request.xhr?
     #    format.html { render :layout => false }
@@ -19,7 +20,7 @@ before_action :require_login, except: [:index, :show]
 
   def new
     @project = Project.new
-    # @reward = @project.rewards.build
+    @reward = @project.rewards.build
   end
 
   def create
@@ -28,7 +29,7 @@ before_action :require_login, except: [:index, :show]
     if @project.save
       redirect_to projects_path
     else
-      binding.pry
+      # binding.pry
       render :new
     end
   end

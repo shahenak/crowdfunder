@@ -1,69 +1,71 @@
-<h1>Let's get started!</h1>
 
- <div class="newproject">
-   <fieldset class="projectform">
-    <legend>NEW PROJECT</legend>
-    <%= form_for @project do |f| %>
-    <!-- Project fields-->
-      <div class="field">
-        <%= f.label :image %><br>
-        <%= f.file_field :image %>
-      </div>
+    <h1>Let's get started!</h1>
 
-      <div class="field">
-        <%= f.text_field :name %>
-      </div>
+     <div class="newproject">
+       <fieldset class="projectform">
+        <legend>NEW PROJECT</legend>
+      <%= form_for @project do |f| %>
+      <!-- Project fields-->
+        <div class="field">
+          <%= f.label :image %><br>
+          <%= f.file_field :image %>
+        </div>
 
-      <div class="field">
+        <div class="field">
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+        </div>
 
-        <%= f.label :description %>
-        <%= f.text_area :description, placeholder: "Write a description ", :maxlength=>"135" %>
-      </div>
+        <div class="field">
 
-      <div class="field">
-        <%= f.label :category %>
-        <%= f.select :category, options_for_select([['Art' ,'Art'], ['Tech', 'Tech'], ['Nature', 'Nature']]) %>
+          <%= f.label :description %>
+          <%= f.text_area :description, placeholder: "Write a description ", :maxlength=>"135" %>
+        </div>
 
-      </div>
+        <div class="field">
+          <%= f.label :category %>
+          <%= f.select :category, options_for_select([['Art' ,'Art'], ['Tech', 'Tech'], ['Nature', 'Nature']]) %>
 
-      <div class="field">
-        <%= f.label :location %>
-        <%= f.text_field :location %>
-      </div>
+        </div>
 
-      <div class="field">
-        <%= f.label :goal %>
-        <%= f.number_field :goal, min: 1 %>
-      </div>
+        <div class="field">
+          <%= f.label :location %>
+          <%= f.text_field :location %>
+        </div>
 
-      <div class="field">
-        <%= f.label :deadline %>
-        <%= f.date_field :deadline %>
-      </div>
-    </fieldset>
-  </div>
-  <!--  Rewards fields-->
+        <div class="field">
+          <%= f.label :goal %>
+          <%= f.number_field :goal, min: 1 %>
+        </div>
 
-  <div class="field">
-    <fieldset class="projectform">
-     <legend>ADD REWARD</legend>
-    <%= f.fields_for :rewards do |rewards_fields| %>
-    <div class="field">
-      <%= rewards_fields.label :name %>
-      <%= rewards_fields.text_field :name %>
-    </div>
+        <div class="field">
+          <%= f.label :deadline %>
+          <%= f.date_field :deadline %>
+        </div>
 
-    <div class="field">
-      <%= rewards_fields.label :description %>
-      <%= rewards_fields.text_field :description %>
-    </div>
+        <!--  Rewards fields-->
 
-    <div class="field">
-      <%= rewards_fields.label :amount %>
-      <%= rewards_fields.number_field :amount %>
-    </div>
-    <% end %>
-  </div>
+          <fieldset class="projectform">
+           <legend>ADD REWARD</legend>
+            <h2>New Reward</h2>
+            <%= f.fields_for :rewards do |rewards_fields| %>
+            <div class="field">
+              <%= rewards_fields.label :name %>
+              <%= rewards_fields.text_field :name %>
+            </div>
 
-  <%= f.submit %>
-<% end %>
+            <div class="field">
+              <%= rewards_fields.label :description %>
+              <%= rewards_fields.text_field :description %>
+            </div>
+
+            <div class="field">
+              <%= rewards_fields.label :amount %>
+              <%= rewards_fields.number_field :amount %>
+            </div>
+            <% end %>
+
+              <%= f.submit %>
+            <% end %>
+          </div>
+          </fieldset>

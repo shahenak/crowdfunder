@@ -13,13 +13,12 @@ class Project < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
   # Control on date for past date
-  # validate :not_past_date
-  #
-  # def not_past_date
-  #   if self.deadline < Date.today
-  #     errors.add(:deadline , 'not in past')
-  #   end
-  # end
+  validate :not_past_date
 
+  def not_past_date
+    if self.deadline < Date.today
+      errors.add(:deadline , 'not in past')
+    end
+  end
 
 end

@@ -1,48 +1,38 @@
-
-<<<<<<< HEAD
 <div class="viewprojects">
 
   <h1><%= @project.name %></h1>
+    Description: <%= @project.description %><br />
+    <p class="<%= 'goal_reached' if @project.sum > @project.goal %>">
+      Goal: $<%= @project.goal %>
+    </p>
 
-  Description: <%= @project.description %><br />
-  Goal: $<%= @project.goal %><br />
-  Category: <%= @project.category %><br />
-  Location: <%= @project.location %><br />
-  Deadline: <%= @project.deadline %><br />
-  Image: <%= image_tag @project.image_url.to_s %> <br />
 
-  <p>
-    There are <%= distance_of_time_in_words(@project.deadline, DateTime.now.utc) %> days left in this project. Still needs Y funding
-  </p>
+    <br />
+    Category: <%= @project.category %><br />
+    Location: <%= @project.location %><br />
+    Deadline: <%= @project.deadline.strftime("%m/%d/%Y") %> <br />
+    Image: <%= image_tag @project.image.thumb.url %> <br />
+    Donations Sum: <%= @project.sum %>
 
-  <% @project.rewards.each do |reward| %>
-    Name: <%= reward.name %>
-    description: <%= reward.description %>
-    Amount: <%= reward.amount %>
-  <% end %>
 
+
+
+
+    <%= render 'form' %>
+
+
+
+    <h2>Rewards</h2>
+    <% @project.rewards.each do |reward| %>
+      Name: <%= reward.name %> <br />
+      description: <%= reward.description %><br />
+      Amount: <%= reward.amount %><br />
+
+    <% end %>
+
+    <br>
+    <br>
+    <p>
+      There are <%= distance_of_time_in_words(@project.deadline, DateTime.now.utc) %> days left in this project. Still needs $<%= @project.goal - @project.sum %> funding
+    </p>
 </div>
-=======
-Description: <%= @project.description %><br />
-Goal: $<%= @project.goal %><br />
-Category: <%= @project.category %><br />
-Location: <%= @project.location %><br />
-Deadline: <%= @project.deadline %><br />
-Image: <%= image_tag @project.image_url.to_s %> <br />
-Donations Sum: <%= @project.sum %>
-
-
-<%= render 'form' %>
-
-
-<p>
-  There are <%= @project.deadline %> days left in this project. Still needs Y funding
-</p>
-
-<% @project.rewards.each do |reward| %>
-  Name: <%= reward.name %>
-  description: <%= reward.description %>
-  Amount: <%= reward.amount %>
-
-<% end %>
->>>>>>> 6bb66bc1e825982ac2510b0e723217994e6007a0
