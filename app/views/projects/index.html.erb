@@ -1,6 +1,7 @@
 <!-- <h1 class="popular_three">What's popular!</h1> -->
 
 <div class="projects">
+<<<<<<< HEAD
   <h1 class="all_projects">All projects</h1>
 
   <p>
@@ -17,3 +18,39 @@
   <div class="ajax_project">
 
   </div>
+=======
+
+
+  <h1 class="all_projects">All projects</h1>
+
+
+    <p>
+      See projects by Category
+    </p>
+
+    <p id="art" class="category" data-category="Art">
+      Art
+    </p>
+    <div id="Artdiv">
+
+    </div>
+
+    <p id="tech" class="category" data-category="Tech">
+      Tech
+    </p>
+
+    <p id="nature" class="category" data-category="Nature">
+      Nature
+    </p><br>
+    <div id="Naturediv" class="Catdiv">
+
+    </div>
+
+
+  <ul>
+    <% @projects.each do |project| %>
+      <%= link_to project.name, project_path(project) %>
+    <% end %>
+  </ul>
+</div>
+>>>>>>> 6bb66bc1e825982ac2510b0e723217994e6007a0

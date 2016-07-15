@@ -1,0 +1,10 @@
+<h3>Make a Donation to this Project:</h3>
+<%= form_for [@project, @donation] do |f| %>
+  <div class="form_field">
+    <%= f.label :amount %>
+    <%= f.number_field :amount%>
+  </div>
+  <div class="submit">
+    <%= f.submit "Submit Donation" %>
+  </div>
+  <% end %>

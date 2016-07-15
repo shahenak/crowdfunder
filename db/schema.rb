@@ -11,19 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20160715025300) do
 
-ActiveRecord::Schema.define(version: 20160714154719) do
+  create_table "donations", force: :cascade do |t|
+    t.float    "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "backer_id"
+    t.integer  "project_id"
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.integer  "goal"
     t.datetime "deadline"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.string   "category"
     t.string   "image"
     t.string   "description"
     t.string   "location"
+    t.integer  "owner_id"
+    t.float    "sum",         default: 0.0
   end
 
   create_table "rewards", force: :cascade do |t|

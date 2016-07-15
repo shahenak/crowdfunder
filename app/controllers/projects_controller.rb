@@ -2,22 +2,24 @@ class ProjectsController < ApplicationController
 before_action :require_login, except: [:index, :show]
 
 
+
   def index
     @projects = Project.all
   end
 
   def show
     @project = Project.find(params[:id])
-    respond_to do |format|
-      if request.xhr?
-       format.html { render :layout => false }
-      end
-    end
+    @donation = Donation.new
+    # respond_to do |format|
+    #   if request.xhr?
+    #    format.html { render :layout => false }
+    #   end
+    # end
   end
 
   def new
     @project = Project.new
-    @reward = @project.rewards.build
+    # @reward = @project.rewards.build
   end
 
   def create
@@ -30,6 +32,21 @@ before_action :require_login, except: [:index, :show]
       render :new
     end
   end
+
+  def cat_search
+    #query for all project categories
+    #return the projects in an object
+
+
+    @projects = Project.where("category = ?", params[:category])
+     render :cat_search, layout: false
+    # respond_to do |format|
+    #   if request.xhr?
+    #    format.html { render :layout => false }
+    #   end
+    # end
+  end
+
 
   private
 
