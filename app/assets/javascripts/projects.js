@@ -12,18 +12,23 @@ $(function(){
     });
   });
 
-  $('.category').on('click', function(){
-    $('.Catdiv').html('');
-      $.ajax({
-        url: "/projects/cat_search",
-        method: 'GET',
-        data: { "category": $(this).data("category") },
-        dataType: 'html'
-      }).done(function(responseData){
-        console.log('hey',responseData);
-        $('.Catdiv').append(responseData);
-      });
-  });
+  $('#new_donation').submit(function(e){
+      e.preventDefault();
+    $.ajax({
+        url: $(this).attr('action'),
+        method:$(this).attr('method'),
+        data: $(this).serialize(),
+        dataType:"json"
+    }).done(function(responseData){
+        $('#donation_amount').val('');
+        $('.resp').text("Thank you!");
+        $('.project-sum').text(responseData.sum)
+    }).fail(function(){
+        console.log('Fail');
+    }).always(function(){
+        console.log("Always");
+    })
+  })
   //
   // $('#nature').on('click', function(e){
   //   $('#Naturediv').html('');

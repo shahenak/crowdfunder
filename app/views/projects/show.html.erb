@@ -1,5 +1,9 @@
 <h1><%= @project.name %></h1>
 
+
+<div class="resp">
+</div>
+
 Description: <%= @project.description %><br />
 <p class="<%= 'goal_reached' if @project.sum > @project.goal %>">
   Goal: $<%= @project.goal %>
@@ -11,7 +15,7 @@ Category: <%= @project.category %><br />
 Location: <%= @project.location %><br />
 Deadline: <%= @project.deadline.strftime("%m/%d/%Y") %> <br />
 Image: <%= image_tag @project.image.thumb.url %> <br />
-Donations Sum: <%= @project.sum %>
+Donations Sum: <span class="project-sum"><%= @project.sum %></span>
 
 
 
