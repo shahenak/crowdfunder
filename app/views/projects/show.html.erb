@@ -32,5 +32,5 @@ Donations Sum: <%= @project.sum %>
 <br>
 <br>
 <p>
-  There are <%= distance_of_time_in_words(@project.deadline, DateTime.now.utc) %> days left in this project. Still needs Y funding
+  There are <%= distance_of_time_in_words(@project.deadline, DateTime.now.utc) %> days left in this project. Still needs $<%= @project.goal - @project.sum %> funding
 </p>
