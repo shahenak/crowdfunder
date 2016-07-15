@@ -6,10 +6,18 @@
     <div class="emailtag">
     <%= label_tag :email %><br>
     </div>
-    <%= text_field_tag :email %><br>
 
+    <div class="email-field-tag">
+    <%= text_field_tag :email %><br>
+    </div>
+
+    <div class="password">
     <%= label_tag :password %><br>
+    </div>
+
+    <div class="password-field-tag">
     <%= password_field_tag :password %><br>
+    </div>
 
     <%= submit_tag "Log in", class:"btn" %>
   <% end %>
