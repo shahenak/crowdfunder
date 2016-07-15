@@ -29,6 +29,8 @@ $(function(){
         console.log("Always");
     })
   })
+
+
   //
   // $('#nature').on('click', function(e){
   //   $('#Naturediv').html('');
